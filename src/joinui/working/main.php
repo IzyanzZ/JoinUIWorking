@@ -39,7 +39,7 @@ class Main extends PluginBase implements Listener {
 
     $form->setTitle($this->cfg->get("title"));
     $form->setContent($this->cfg-get->("content");
-    $form->addButton($this->cfg->get("button));
+    $form->addButton($this->cfg->get("button"));
     $form->sendToPlayer($player);
     return $form;
   }
