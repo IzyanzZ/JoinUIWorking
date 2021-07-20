@@ -12,10 +12,11 @@ use pocketmine\event\Listener;
 class Main extends PluginBase implements Listener {
   
   public function onEnable(){
-   @mkdir->($this->getDataFolder());
-    $this->saveResource("config.yml");
-  
-    $this->getServer()->getPluginManager()->registerEvents($this, $this);
+   $this->getLogger()->info("§f[§aEnabled§f] JoinUI");
+        $this->getServer()->getPluginManager()->registerEvents($this,$this);
+        @mkdir($this->getDataFolder());
+        $this->saveResource("config.yml");
+        $this->cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
   }
   
   public function onJoin(PlayerJoinEvent $ev){
@@ -36,9 +37,9 @@ class Main extends PluginBase implements Listener {
       }
     });
 
-    $form->setTitle("Edit");
-    $form->setContent("Edit");
-    $form->addButton("Cancel", 0, "textures/ui/op");
+    $form->setTitle($this->cfg->get("title"));
+    $form->setContent($this->cfg-get->("content");
+    $form->addButton($this->cfg->get("button));
     $form->sendToPlayer($player);
     return $form;
   }
