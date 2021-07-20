@@ -12,6 +12,9 @@ use pocketmine\event\Listener;
 class Main extends PluginBase implements Listener {
   
   public function onEnable(){
+    @mkdir->($this->getDataFolder());
+    $this->saveResource("config.yml");
+  
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
   }
   
