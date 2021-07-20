@@ -1,0 +1,5 @@
+name: JoinUI
+version: 1.2.1
+main: joinui\working\main
+api: [3.0.0, 4.0.0]
+author: IzyanzYT
