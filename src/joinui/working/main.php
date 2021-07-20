@@ -14,7 +14,7 @@ class Main extends PluginBase implements Listener {
   public function onEnable(){
    $this->getLogger()->info("§f[§aEnabled§f] JoinUI");
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
-        @mkdir($this->getDataFolder());
+        @mkdir($this->getDataFolder();
         $this->saveResource("config.yml");
         $this->cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
   }
